@@ -1,0 +1,71 @@
+
+# =============== #
+# Unity generated #
+# =============== #
+[Tt]emp/
+[Oo]bj/
+[Bb]uild
+[Ll]ibrary/
+[Ll]ogs/
+sysinfo.txt
+Mockups/
+ 
+# ===================================== #
+# Visual Studio / MonoDevelop generated #
+# ===================================== #
+[Ee]xported[Oo]bj/
+*.
+*.csproj
+*.pidb
+*.suo
+*.sln
+*.sln*
+*.user
+*.unityproj
+*.booproj
+*.dotsettings
+*UnityVS.VersionSpecific.dll*
+*.userprefs
+pc version/
+.idea
+
+!game.sln.DotSettings.user
+ 
+# ============ #
+# OS generated #
+# ============ #
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+#Icon?
+ehthumbs.db
+[Tt]humbs.db
+thumbs.db.meta
+.vs
+
+# ================ #
+# Project Specific #
+# ================ #
+StyleCop.Cache
+StyleCop.Cache.meta
+[Uu]rls.txt
+log.txt
+stats.txt
+stats.json
+eventlog.txt
+buildreports/
+
+DesyncReplayFile.json
+DesyncScreenshot.png
+DesyncScreenshot.png.meta
+
+SharedSettings.cpf
+
+# ================ #
+# Developer Tools  #
+# ================ #
+BetterBuildInfo/
+AssetHunter/
+
+
