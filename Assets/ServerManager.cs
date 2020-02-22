@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.SignalR.Client;
+using Microsoft.Extensions.DependencyInjection;
 using UnityEngine;
 
 [Serializable]
@@ -24,7 +25,7 @@ public class ServerManager : MonoBehaviour {
     void Start () {
         connection = new HubConnectionBuilder ()
             .WithUrl ("https://localhost:5001/gameHub")
-            // .AddMessagePackProtocol()
+            .AddMessagePackProtocol ()
             .Build ();
 
         connection.On<string> ("ReceiveMessage", message => { Debug.Log ($"ReceiveMessage: {message}"); });
@@ -36,6 +37,8 @@ public class ServerManager : MonoBehaviour {
         Connect ();
 
         JoinGame ("game");
+
+        SendSimpleMessage ("Hello World!");
 
         SendDictionary ();
 
@@ -63,6 +66,15 @@ public class ServerManager : MonoBehaviour {
     #endregion
 
     #region Sending
+
+    async void SendSimpleMessage (string message) {
+        try {
+            await connection.InvokeAsync<string> ("SendMessage", message);
+        }
+        catch (Exception ex) {
+            Debug.LogError (ex.Message);
+        }
+    }
 
     async void SendDictionary () {
         var data = new Dictionary<string, object> ();
